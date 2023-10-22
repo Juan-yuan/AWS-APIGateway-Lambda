@@ -33,12 +33,13 @@ Follow these steps to create and test the `colorConversionBGR2GRAY` Lambda funct
       - Amazon S3 link URL: (paste the S3 folder link here:https://python-apigateway-lambda.s3.ap-southeast-2.amazonaws.com/python-package.zip)
 - Compatible runtimes - optional: Python 3.8 (need the same version with the lambda function)
 
-### 3. back to colorConverslonBGR2GRAY lambda function page:
+### 3. back to `colorConverslonBGR2GRAY` lambda function page:
     1. scroll all down find Layers -> click: Add a layer
     2. select: Custom layers
     3. select the layer name and version
 
-###  4. in the lambda function, click Test, will get the succes test result as:
+###  4. in the lambda function:
+- click Test, will get the succes test result as:
     {
       "statusCode": 200,
       "body": "xxx long lines",
