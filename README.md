@@ -40,6 +40,7 @@ Follow these steps to create and test the `colorConversionBGR2GRAY` Lambda funct
 
 ###  4. in the lambda function:
 - click Test, will get the succes test result as:
+```json
     {
       "statusCode": 200,
       "body": "xxx long lines",
@@ -48,6 +49,7 @@ Follow these steps to create and test the `colorConversionBGR2GRAY` Lambda funct
         "content-type": "image/png"
       }
     }
+```
 
 ###  5. create API Gateway
     1. go to API Gateway console
