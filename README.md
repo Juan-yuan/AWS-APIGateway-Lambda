@@ -23,7 +23,7 @@ Follow these steps to create and test the `colorConversionBGR2GRAY` Lambda funct
 }
 ```
 
-### 2. create a `python-apigateway-lambda` bucket in S3  (architectures: x86_64)
+### 2. Create a `python-apigateway-lambda` bucket in S3  (architectures: x86_64)
 - Upload python-aws-apigateway-lambda.zip file to python-apigateway-lambda bucket file
 - Copy the S3 folder link: https://python-apigateway-lambda.s3.ap-southeast-2.amazonaws.com/python-package.zip
 - Open lambda console, click: Layers
@@ -33,13 +33,13 @@ Follow these steps to create and test the `colorConversionBGR2GRAY` Lambda funct
       - Amazon S3 link URL: (paste the S3 folder link here:https://python-apigateway-lambda.s3.ap-southeast-2.amazonaws.com/python-package.zip)
 - Compatible runtimes - optional: Python 3.8 (need the same version with the lambda function)
 
-### 3. back to `colorConverslonBGR2GRAY` lambda function page:
-    1. scroll all down find Layers -> click: Add a layer
+### 3. Back to `colorConverslonBGR2GRAY` lambda function page:
+    1. Ccroll all down find Layers -> click: Add a layer
     2. select: Custom layers
     3. select the layer name and version
 
-###  4. in the lambda function:
-- click Test, will get the succes test result as:
+###  4. In the lambda function:
+- Click Test, will get the succes test result as:
 ```json
     {
       "statusCode": 200,
@@ -51,21 +51,26 @@ Follow these steps to create and test the `colorConversionBGR2GRAY` Lambda funct
     }
 ```
 
-###  5. create API Gateway
-    1. go to API Gateway console
-    2. REST API -> build 
-    3. NEW API -> API name: imageProcessingAPI -> create
-    4. Create method -> Method type: POST -> 
-        - Integration type: Lambda function -> 
-        - select: Lambda proxy integration ->
-        - Lambda function: colorConverslonBGR2GRAY
-    5. click: Deploy API
-        - stage: *New stage*
-        - Stage name: dev
+###  5. Create API Gateway
+  1. Go to API Gateway console
+  2. REST API -> build 
+  3. NEW API -> API name: imageProcessingAPI -> create
+  4. Create method -> Method type: POST -> 
+      - Integration type: Lambda function -> 
+      - select: Lambda proxy integration ->
+      - Lambda function: colorConverslonBGR2GRAY
+  5. Click: Deploy API
+      - stage: *New stage*
+      - Stage name: dev
 
 ###  6. Test API Gatewar:
-    1. click: Test
-    2. Request body: "past Base64 Encoded String values"
-    3. Check response status if is 200
+  1. Click: Test
+  2. Request body: "past Base64 Encoded String values"
+  3. Check response status if is 200
+
+### 7. Find your API link and handle it:
+  1. Click: Stages (API Gateway console)
+  2. Invoke URL: copy it to main.py file API_ENDPOINT variable
+  3. back to main.py file, run it, then will call API gateway to get the grey color image.
 
 
